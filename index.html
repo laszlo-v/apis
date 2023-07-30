@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API's</title>
+    <!-- for leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- for leaflet -->
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <!-- main starts here -->
+    <main>
+      <h1 class="most">Some of the most popular FREE APIs.</h1>
+      <section class="container-main">
+        <!-- unsplash starts here -->
+        <section class="unsplash-container container">
+          <h2>Images from Unsplash</h2>
+          <div class="unsplash-images">
+            <img class="img-1" alt="Random image from unsplash" />
+            <img class="img-2" alt="Random image from unsplash" />
+          </div>
+        </section>
+        <!-- unsplash ends here -->
+
+        <!-- pexels starts here -->
+        <section class="pexels-container container">
+          <h2>Images from Pexels</h2>
+          <div class="pexels-images">
+            <img class="img-3" alt="Random image from pexels" />
+            <img class="img-4" alt="Random image from pexels" />
+          </div>
+        </section>
+        <section class="pixabay-container container">
+          <h2>Images from Pixabay</h2>
+          <div class="pixabay-images">
+            <img class="img-5" alt="Random image from pixabay" />
+            <img class="img-6" alt="Random image from pixabay" />
+          </div>
+        </section>
+        <!-- pexels ends here -->
+
+        <!-- rest countries starts here -->
+        <section class="rest-countries-container container">
+          <h2>Rest Countries</h2>
+          <div>
+            <h3>Enter country (e.g. Switzerland, Angola, Jamaica, Bhutan)</h3>
+            <form class="rest-form">
+              <input type="text" class="country" required />
+              <button type="submit" class="get-data">Get data</button>
+            </form>
+            <img class="rest-flag" />
+            <h3 class="capital"></h3>
+            <h3 class="borders"></h3>
+            <h3 class="calling-codes"></h3>
+            <h3 class="currencies"></h3>
+            <h3 class="population"></h3>
+            <h3 class="region"></h3>
+            <h3 class="time-zone"></h3>
+            <h3 class="top-level-domain"></h3>
+          </div>
+        </section>
+        <!-- rest countries ends here -->
+
+        <!-- open weather starts here -->
+        <section class="open-weather-container container">
+          <h2>Open Weather API</h2>
+          <div class="input-container">
+            <form method="" post="" class="weather-form">
+              <input
+                type="text"
+                placeholder="Enter the city here"
+                class="weather-city"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Enter state code e.g. ie, us..."
+                class="weather-state"
+                required
+              />
+              <input
+                type="submit"
+                value="Get data"
+                class="get-weather-button"
+              />
+            </form>
+          </div>
+          <img class="weather-icon" />
+          <h3 class="temp"></h3>
+          <h3 class="description"></h3>
+          <h3 class="humidity"></h3>
+          <h3 class="pressure"></h3>
+          <h3 class="wind"></h3>
+          <h3 class="sunrise"></h3>
+          <h3 class="sunset"></h3>
+        </section>
+        <!-- open weather ends here -->
+
+        <!-- leaflet starts here => More info on: https://leafletjs.com/reference.html -->
+        <section class="leaflet-container container geoLocation">
+          <h2>Geolocation API Leaflet</h2>
+          <div id="mapid"></div>
+          <div class="distance"></div>
+          <div class="note">
+            Note: The distance is a straight line distance, as the crow flies!
+          </div>
+        </section>
+        <!-- leaflet ends here -->
+
+        <!-- google maps starts here -->
+        <section class="google-map-container container geoLocation">
+          <h2>Google Map</h2>
+          <div class="googleMap">
+            <div style="width: 100%">
+              <div style="width: 100%">
+                <div style="width: 100%">
+                  <iframe
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=480&amp;hl=en&amp;q=1%20O'Connel%20Street%20Lower,%20North%20City,%20Dublin%201+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    width="100%"
+                    height="480"
+                    frameborder="0"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- google maps ends here -->
+      </section>
+
+      <!-- text to speach starts here -->
+      <section class="text-to-speach-container container">
+        <div class="textToSpeech">
+          <h2>Text-to-Speech API</h2>
+          <form>
+            <textarea class="txt" rows="10" cols="45"></textarea>
+            <div>
+              <label for="rate">Rate</label
+              ><input
+                type="range"
+                min="0.5"
+                max="2"
+                value="1"
+                step="0.1"
+                id="rate"
+              />
+              <div class="rate-value">1</div>
+              <div class="clearfix"></div>
+            </div>
+            <div>
+              <label for="pitch">Pitch</label
+              ><input
+                type="range"
+                min="0"
+                max="2"
+                value="1"
+                step="0.1"
+                id="pitch"
+              />
+              <div class="pitch-value">1</div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="selectContainer">
+              <select></select>
+            </div>
+
+            <div class="controls">
+              <button id="play" type="submit">Play</button>
+            </div>
+          </form>
+          <!-- text to speach ends here-->
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
