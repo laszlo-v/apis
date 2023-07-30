@@ -13,7 +13,7 @@ body {
   /* background-color: #222; */
   /* color: #00ffaa; */
 }
-/***************** mixins **************/
+
 :root {
   --main: rgb(166, 7, 180);
 }
@@ -21,11 +21,10 @@ body {
   padding: 0 2vw;
 }
 h1 {
-  background-color: orange;
   padding: 0.4rem 0;
   color: var(--main);
   text-align: center;
-  margin: 0 auto;
+  margin: 8rem auto 0;
 }
 h2 {
   color: var(--main);
@@ -38,6 +37,72 @@ p,
 button {
   color: rgb(71, 71, 71);
 }
+/************************ top slider CSS ****************/
+
+.top__slider {
+  width: 100vw;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0rem;
+  height: 6rem;
+  background-color: rgb(25, 26, 26);
+  z-index: 3;
+}
+.slider__container {
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  height: 6rem;
+  margin: auto;
+  overflow-x: hidden;
+  background-color: rgb(25, 26, 26);
+  position: fixed;
+  top: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.list {
+  display: flex;
+  align-items: center;
+  width: calc(20rem * 22);
+}
+
+.api {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 20rem;
+  color: rgb(150, 142, 142);
+  font-size: 1.4rem;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.slider__container .list {
+  animation: slideshow 70s linear infinite;
+}
+.api:hover {
+  color: var(--main);
+  font-size: 1.5rem;
+  transition: all 0.5s;
+  transform: translateY(-0.5rem);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+@keyframes slideshow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-20rem * 11));
+  }
+}
 .container {
   width: 80vw;
   text-align: center;
@@ -47,6 +112,9 @@ button {
 .container h3 {
   text-align: center;
   margin: 2rem auto;
+}
+.unsplash-container {
+  margin-top: 10rem;
 }
 .unsplash-images,
 .pexels-images,
