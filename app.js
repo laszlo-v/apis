@@ -339,4 +339,57 @@
   rate.onchange = function () {
     rateValue.textContent = rate.value;
   };
+
+  /************ intersection observer **********/
+
+  const most = document.querySelector(".most");
+  const lineHeight = document.querySelector(".middle h3");
+  const top = document.querySelector(".top");
+  const bottom = document.querySelector(".bottom");
+  const intersectionContainer = document.querySelector(
+    ".intersectionObserverContainer"
+  );
+  const iOH3 = document.querySelector(".iOH3");
+  const iOLeft = document.querySelector(".iOLeft");
+  const iOMiddle = document.querySelector(".iOMiddle");
+  const iORight = document.querySelector(".iORight");
+
+  const options = {
+    root: null, // Default
+    threshold: 0, // Default is 0, value must be between 0 and 1
+    rootMargin: "-50%",
+  };
+  const options2 = {
+    root: null,
+    threshold: 0,
+    rootMargin: "-40%",
+  };
+
+  //Just created
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      most.classList.toggle("change");
+      lineHeight.classList.toggle("line-height");
+      top.classList.toggle("top-change");
+      bottom.classList.toggle("bottom-change");
+    });
+  }, options);
+
+  const observer2 = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      iOLeft.classList.toggle("iOLeftChange");
+      iOMiddle.classList.toggle("iOMiddleChange");
+      iORight.classList.toggle("iORightChange");
+    });
+  }, options2);
+
+  // Using the intersection observer
+  // One case, select all => ("most") without class selector.
+  // most.forEach((e) => {
+  //   observer.observe(e);
+  // });
+
+  // Second case
+  observer.observe(intersectionContainer);
+  observer2.observe(iOH3);
 })();
