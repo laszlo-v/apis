@@ -287,7 +287,7 @@ button {
 .intersectionObserverContainer {
   position: relative;
   max-width: 100vw;
-  min-height: 80vh;
+  min-height: 60vh;
   z-index: -1;
 }
 .iOH3 {
@@ -324,20 +324,6 @@ button {
   -o-transition: all 1s;
 }
 
-.top {
-  top: 5rem;
-  position: absolute;
-  width: 15rem;
-  height: 15rem;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  background-color: rgb(234, 43, 5);
-  transition: background-color 2s;
-  -webkit-transition: background-color 2s;
-  -moz-transition: background-color 2s;
-  -ms-transition: background-color 2s;
-  -o-transition: background-color 2s;
-}
 .middle {
   display: flex;
   position: absolute;
@@ -372,6 +358,20 @@ button {
   color: rgb(153, 143, 143) !important;
   text-transform: lowercase !important;
 }
+.top {
+  top: 5rem;
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  background-color: rgb(234, 43, 5);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
 .bottom {
   position: absolute;
   top: 10rem;
@@ -380,25 +380,73 @@ button {
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
   background-color: var(--main);
-  transition: background-color 2s;
-  -webkit-transition: background-color 2s;
-  -moz-transition: background-color 2s;
-  -ms-transition: background-color 2s;
-  -o-transition: background-color 2s;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
 }
 .top-change {
   background-color: var(--main);
-  transition: background-color 2s;
-  -webkit-transition: background-color 2s;
-  -moz-transition: background-color 2s;
-  -ms-transition: background-color 2s;
-  -o-transition: background-color 2s;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
 }
 .bottom-change {
   background-color: rgb(234, 43, 5);
-  transition: background-color 2s;
-  -webkit-transition: background-color 2s;
-  -moz-transition: background-color 2s;
-  -ms-transition: background-color 2s;
-  -o-transition: background-color 2s;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+@media (min-width: 40rem) {
+  .top-change {
+    transform: translateX(2rem);
+    -webkit-transform: translateX(2rem);
+    -moz-transform: translateX(2rem);
+    -ms-transform: translateX(2rem);
+    -o-transform: translateX(2rem);
+  }
+  .bottom-change {
+    transform: translateX(-14rem);
+    -webkit-transform: translateX(-16rem);
+    -moz-transform: translateX(-14rem);
+    -ms-transform: translateX(-14rem);
+    -o-transform: translateX(-14rem);
+  }
+}
+
+.slide-in-out {
+  transform: translateX(-50vw);
+  -webkit-transform: translateX(-50vw);
+  -moz-transform: translateX(-50vw);
+  -ms-transform: translateX(-50vw);
+  -o-transform: translateX(-50vw);
+  opacity: 0;
+  transition: all 2s;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  font-size: 1.5rem;
+  margin: 0 auto 2rem;
+  width: 60ch;
+  text-align: center;
+  color: grey;
+}
+.slide-in-out.show {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  opacity: 1;
+  transition: all 2s;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
 }

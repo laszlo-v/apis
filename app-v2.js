@@ -34,6 +34,11 @@
   const sunsrise = document.querySelector(".sunrise");
   const sunset = document.querySelector(".sunset");
 
+  const slideInOutContainer = document.querySelector(".slide-in-out-container");
+  const slideInOut = document.querySelectorAll(".slide-in-out");
+  const slideInOutArray = Array.prototype.slice.call(slideInOut);
+  console.log(slideInOutArray);
+
   let speech = window.speechSynthesis;
 
   let inputTxt = document.querySelector(".txt");
@@ -55,7 +60,6 @@
       );
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         unsplashImage1.src = data[5].urls.small;
         unsplashImage2.src = data[9].urls.small;
       } else {
@@ -126,7 +130,6 @@
       );
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         restFlag.src = data[0].flag;
         capital.textContent = `The capital city of ${data[0].name} is: ${data[0].capital}`;
         borders.textContent = `The borders are: ${data[0].borders}`;
@@ -171,7 +174,6 @@
       );
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
         temp.textContent = `The temperature in ${fixCase(
           weatherCity.value
@@ -362,7 +364,7 @@
   const options2 = {
     root: null,
     threshold: 0,
-    rootMargin: "-40%",
+    rootMargin: "-50%",
   };
 
   //Just created
@@ -392,4 +394,20 @@
   // Second case
   observer.observe(intersectionContainer);
   observer2.observe(iOH3);
+
+  /**************** slide in out pars ***********/
+
+  const observerPar = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("show", entry.isIntersecting);
+    });
+    console.log(entries);
+  });
+
+  slideInOutArray.forEach(
+    (p) => {
+      observerPar.observe(p);
+    },
+    { threshold: 0.8 }
+  );
 })();
