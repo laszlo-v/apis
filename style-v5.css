@@ -293,7 +293,7 @@ button {
 .iOH3 {
   margin: 0 auto;
   display: flex;
-  max-width: 100vw;
+  max-width: 100%;
   align-items: center;
   background-color: white;
   border: 0.01rem solid var(--main);
@@ -402,6 +402,7 @@ button {
   -ms-transition: all 1s;
   -o-transition: all 1s;
 }
+
 @media (min-width: 40rem) {
   .top-change {
     transform: translateX(2rem);
@@ -433,7 +434,7 @@ button {
   -o-transition: all 2s;
   font-size: 1.5rem;
   margin: 0 auto 2rem;
-  width: 60ch;
+  max-width: 60ch;
   text-align: center;
   color: grey;
 }
