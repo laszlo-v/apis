@@ -67,7 +67,7 @@ import { unsplashAPIKey, pexelsAPIKey, pixabayAPIKey } from "./modules/keys.js";
     }
   };
 
-  //fetchFromUnsplash();
+  fetchFromUnsplash();
 
   // getting images from pexels
 
@@ -93,7 +93,7 @@ import { unsplashAPIKey, pexelsAPIKey, pixabayAPIKey } from "./modules/keys.js";
     }
   };
 
-  //fetchPexels();
+  fetchPexels();
 
   // getting images from pixabay
 
@@ -117,7 +117,7 @@ import { unsplashAPIKey, pexelsAPIKey, pixabayAPIKey } from "./modules/keys.js";
     }
   };
 
-  //fetchPixabay();
+  fetchPixabay();
 
   //restcountries.com - data
   const restCountries = async () => {
