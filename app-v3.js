@@ -1,4 +1,5 @@
 "use strict";
+import { unsplashAPIKey, pexelsAPIKey, pixabayAPIKey } from "./modules/keys.js";
 
 (() => {
   const unsplashImage1 = document.querySelector(".img-1");
@@ -18,10 +19,6 @@
   const region = document.querySelector(".region");
   const timeZone = document.querySelector(".time-zone");
   const topLevelDomain = document.querySelector(".top-level-domain");
-  const unsplashAPIKey = "MQSj0XkiTqUE6c0j6_lSlBvYgUPJV7-9MY2WTF6r1qA";
-  const pexelsAPIKey =
-    "tIl1Xvbh6xePkmaCLnEZOOidXxOFvUzU9gT2NU6zF4NMlJdsgqlo4kKl";
-  const pixabayAPIKey = "38333076-34da91baf7d706ea593606e0f";
   const weatherCity = document.querySelector(".weather-city");
   const weatherState = document.querySelector(".weather-state");
   const weatherIcon = document.querySelector(".weather-icon");
@@ -37,7 +34,7 @@
   const slideInOutContainer = document.querySelector(".slide-in-out-container");
   const slideInOut = document.querySelectorAll(".slide-in-out");
   const slideInOutArray = Array.prototype.slice.call(slideInOut);
-  console.log(slideInOutArray);
+  //console.log(slideInOutArray);
 
   let speech = window.speechSynthesis;
 
@@ -70,7 +67,7 @@
     }
   };
 
-  fetchFromUnsplash();
+  //fetchFromUnsplash();
 
   // getting images from pexels
 
@@ -96,7 +93,7 @@
     }
   };
 
-  fetchPexels();
+  //fetchPexels();
 
   // getting images from pixabay
 
@@ -120,7 +117,7 @@
     }
   };
 
-  fetchPixabay();
+  //fetchPixabay();
 
   //restcountries.com - data
   const restCountries = async () => {
@@ -216,7 +213,7 @@
 
         // https://leaflet-extras.github.io/leaflet-providers/preview/
         // More info on: https://leafltjs.com/reference.html
-        L.tileLayer("https://tile.osm.ch/switzerland/{z}/{x}/{y}.png", {
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }).addTo(mymap);
@@ -401,7 +398,7 @@
     entries.forEach((entry) => {
       entry.target.classList.toggle("show", entry.isIntersecting);
     });
-    console.log(entries);
+    //console.log(entries);
   });
 
   slideInOutArray.forEach(
